@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -E-TİCARET SİTESİ</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+    #baslikyazisi {
+        text-align:center;
+    }
+        #menu {
+            background-color: #ccc;
+        }
+        #resim {
+            background-color: #ccc;
+        }
+
+        
+        </style>
+</head>
+<body>
+    <div style="width:1920px;background-color:#ccc;padding:30px;">
+        <div id="baslikyazisi">
+            <b><i></i></b><font size="6" face="Helvetica" color="black">E-TİCARET SİTESİ OFİS VE KIRTASİYE ÜRÜNLERİ</font></i></b>
+        </div>
+    </div>
+    </br>
+    <div>
+        <img src="~/Resim/ofis.png" width="1920" height="300">
+    </div>
+    </br>
+    <div>
+        <ul id="menu">
+            <li class="ui-widget-header"><div>KIRTASİYE ÜRÜNLERİ</div></li>
+            <div>@Html.ActionLink("Dosyalama,Arşivleme", "Index", "DosyalamaArsivlemes")</div>
+            <div>@Html.ActionLink("Kağıt Ürünleri", "Index", "KagitUrunleris")</div>
+            <li class="ui-widget-header"><div>OFİS MALZEMELERİ</div></li>
+            <div>@Html.ActionLink("Mikroskop", "Index", "Mikroskops")</div>
+            <div>@Html.ActionLink("Hesap Makinesi", "Index", "HesapMakinesis")</div>
+            <li class="ui-widget-header"><div>OKUL ÜRÜNLERİ</div></li>
+            <div>@Html.ActionLink("Okul Çantaları", "Index", "OkulCantalaris")</div>
+            <div>@Html.ActionLink("Okul Defterleri", "Index", "OkulDefterleris")</div>
+        </ul>
+        <br />
+    </div>
+    
+    <div id="resim">
+        <li><div>@Html.ActionLink("Resim Ekleme Yolu", "Index", "ResimYolus")</div></li>
+    </div>
+        @RenderBody()
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

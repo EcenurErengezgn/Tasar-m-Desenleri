@@ -1,0 +1,61 @@
+﻿@model TasarimDesenleri_odev1.Models.DosyalamaArsivleme
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    #menu {
+        width: 1920px;
+        background-color: #ccc;
+        padding: 30px;
+    }
+</style>
+
+<div id="menu">
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <font size="2" face="Helvetica" color="blue">Ürün Adı : </font>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adi)
+        </dd>
+
+        <dt>
+            <font size="2" face="Helvetica" color="blue">Fiyat : </font>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fiyat).90TL
+        </dd>
+
+        <dt>
+            <font size="2" face="Helvetica" color="blue">Ürün Bilgisi : </font>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urun_bilgisi)
+        </dd>
+
+        <dt>
+            <font size="2" face="Helvetica" color="blue">Resim Yolu : </font>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResimYolu.adi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="SİL" class="btn btn-default" /> |
+            @Html.ActionLink("GERİ DÖN", "Index")
+        </div>
+    }
+</div>

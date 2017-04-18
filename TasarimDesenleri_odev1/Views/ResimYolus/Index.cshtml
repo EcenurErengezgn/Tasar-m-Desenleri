@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TasarimDesenleri_odev1.Models.ResimYolu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<style>
+    #urunler {
+        width: 1920px;
+        background-color: #ccc;
+        padding: 30px;
+    }
+</style>
+
+
+
+
+
+
+<div id="urunler">
+
+    <table class="table">
+        <tr>
+            <th>
+                <font size="2" face="Helvetica" color="blue">Resim Yolu </font>
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.adi)
+                </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Resim Bilgisi", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>

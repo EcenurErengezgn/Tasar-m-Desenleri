@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DosyalamaArsivlemes" EntityType="Model1.DosyalamaArsivleme" />
+    <EntitySet Name="KagitUrunleris" EntityType="Model1.KagitUrunleri" />
+    <EntitySet Name="Mikroskops" EntityType="Model1.Mikroskop" />
+    <EntitySet Name="HesapMakinesis" EntityType="Model1.HesapMakinesi" />
+    <EntitySet Name="OkulCantalaris" EntityType="Model1.OkulCantalari" />
+    <EntitySet Name="OkulDefterleris" EntityType="Model1.OkulDefterleri" />
+    <EntitySet Name="ResimYolus" EntityType="Model1.ResimYolu" />
+    <AssociationSet Name="ResimYoluDosyalamaArsivleme" Association="Model1.ResimYoluDosyalamaArsivleme">
+      <End Role="ResimYolu" EntitySet="ResimYolus" />
+      <End Role="DosyalamaArsivleme" EntitySet="DosyalamaArsivlemes" />
+    </AssociationSet>
+    <AssociationSet Name="ResimYoluHesapMakinesi" Association="Model1.ResimYoluHesapMakinesi">
+      <End Role="ResimYolu" EntitySet="ResimYolus" />
+      <End Role="HesapMakinesi" EntitySet="HesapMakinesis" />
+    </AssociationSet>
+    <AssociationSet Name="ResimYoluKagitUrunleri" Association="Model1.ResimYoluKagitUrunleri">
+      <End Role="ResimYolu" EntitySet="ResimYolus" />
+      <End Role="KagitUrunleri" EntitySet="KagitUrunleris" />
+    </AssociationSet>
+    <AssociationSet Name="ResimYoluMikroskop" Association="Model1.ResimYoluMikroskop">
+      <End Role="ResimYolu" EntitySet="ResimYolus" />
+      <End Role="Mikroskop" EntitySet="Mikroskops" />
+    </AssociationSet>
+    <AssociationSet Name="ResimYoluOkulCantalari" Association="Model1.ResimYoluOkulCantalari">
+      <End Role="ResimYolu" EntitySet="ResimYolus" />
+      <End Role="OkulCantalari" EntitySet="OkulCantalaris" />
+    </AssociationSet>
+    <AssociationSet Name="ResimYoluOkulDefterleri" Association="Model1.ResimYoluOkulDefterleri">
+      <End Role="ResimYolu" EntitySet="ResimYolus" />
+      <End Role="OkulDefterleri" EntitySet="OkulDefterleris" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DosyalamaArsivleme">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" Nullable="false" />
+    <Property Name="fiyat" Type="Double" Nullable="false" />
+    <Property Name="urun_bilgisi" Type="String" Nullable="false" />
+    <NavigationProperty Name="ResimYolu" Relationship="Model1.ResimYoluDosyalamaArsivleme" FromRole="DosyalamaArsivleme" ToRole="ResimYolu" />
+    <Property Name="ResimYolu_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KagitUrunleri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" Nullable="false" />
+    <Property Name="fiyat" Type="Double" Nullable="false" />
+    <Property Name="urun_bilgisi" Type="String" Nullable="false" />
+    <NavigationProperty Name="ResimYolu" Relationship="Model1.ResimYoluKagitUrunleri" FromRole="KagitUrunleri" ToRole="ResimYolu" />
+    <Property Name="ResimYolu_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mikroskop">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" Nullable="false" />
+    <Property Name="fiyat" Type="Double" Nullable="false" />
+    <Property Name="urun_bilgisi" Type="String" Nullable="false" />
+    <NavigationProperty Name="ResimYolu" Relationship="Model1.ResimYoluMikroskop" FromRole="Mikroskop" ToRole="ResimYolu" />
+    <Property Name="ResimYolu_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HesapMakinesi">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" Nullable="false" />
+    <Property Name="fiyat" Type="Double" Nullable="false" />
+    <Property Name="urun_bilgisi" Type="String" Nullable="false" />
+    <NavigationProperty Name="ResimYolu" Relationship="Model1.ResimYoluHesapMakinesi" FromRole="HesapMakinesi" ToRole="ResimYolu" />
+    <Property Name="ResimYolu_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OkulCantalari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" Nullable="false" />
+    <Property Name="fiyat" Type="Double" Nullable="false" />
+    <Property Name="urun_bilgisi" Type="String" Nullable="false" />
+    <NavigationProperty Name="ResimYolu" Relationship="Model1.ResimYoluOkulCantalari" FromRole="OkulCantalari" ToRole="ResimYolu" />
+    <Property Name="ResimYolu_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OkulDefterleri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" Nullable="false" />
+    <Property Name="fiyat" Type="Double" Nullable="false" />
+    <Property Name="urun_bilgisi" Type="String" Nullable="false" />
+    <NavigationProperty Name="ResimYolu" Relationship="Model1.ResimYoluOkulDefterleri" FromRole="OkulDefterleri" ToRole="ResimYolu" />
+    <Property Name="ResimYolu_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ResimYolu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" Nullable="false" />
+    <NavigationProperty Name="DosyalamaArsivleme" Relationship="Model1.ResimYoluDosyalamaArsivleme" FromRole="ResimYolu" ToRole="DosyalamaArsivleme" />
+    <NavigationProperty Name="HesapMakinesi" Relationship="Model1.ResimYoluHesapMakinesi" FromRole="ResimYolu" ToRole="HesapMakinesi" />
+    <NavigationProperty Name="KagitUrunleri" Relationship="Model1.ResimYoluKagitUrunleri" FromRole="ResimYolu" ToRole="KagitUrunleri" />
+    <NavigationProperty Name="Mikroskop" Relationship="Model1.ResimYoluMikroskop" FromRole="ResimYolu" ToRole="Mikroskop" />
+    <NavigationProperty Name="OkulCantalari" Relationship="Model1.ResimYoluOkulCantalari" FromRole="ResimYolu" ToRole="OkulCantalari" />
+    <NavigationProperty Name="OkulDefterleri" Relationship="Model1.ResimYoluOkulDefterleri" FromRole="ResimYolu" ToRole="OkulDefterleri" />
+  </EntityType>
+  <Association Name="ResimYoluDosyalamaArsivleme">
+    <End Type="Model1.ResimYolu" Role="ResimYolu" Multiplicity="1" />
+    <End Type="Model1.DosyalamaArsivleme" Role="DosyalamaArsivleme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResimYolu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DosyalamaArsivleme">
+        <PropertyRef Name="ResimYolu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ResimYoluHesapMakinesi">
+    <End Type="Model1.ResimYolu" Role="ResimYolu" Multiplicity="1" />
+    <End Type="Model1.HesapMakinesi" Role="HesapMakinesi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResimYolu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HesapMakinesi">
+        <PropertyRef Name="ResimYolu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ResimYoluKagitUrunleri">
+    <End Type="Model1.ResimYolu" Role="ResimYolu" Multiplicity="1" />
+    <End Type="Model1.KagitUrunleri" Role="KagitUrunleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResimYolu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="KagitUrunleri">
+        <PropertyRef Name="ResimYolu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ResimYoluMikroskop">
+    <End Type="Model1.ResimYolu" Role="ResimYolu" Multiplicity="1" />
+    <End Type="Model1.Mikroskop" Role="Mikroskop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResimYolu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Mikroskop">
+        <PropertyRef Name="ResimYolu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ResimYoluOkulCantalari">
+    <End Type="Model1.ResimYolu" Role="ResimYolu" Multiplicity="1" />
+    <End Type="Model1.OkulCantalari" Role="OkulCantalari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResimYolu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OkulCantalari">
+        <PropertyRef Name="ResimYolu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ResimYoluOkulDefterleri">
+    <End Type="Model1.ResimYolu" Role="ResimYolu" Multiplicity="1" />
+    <End Type="Model1.OkulDefterleri" Role="OkulDefterleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResimYolu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OkulDefterleri">
+        <PropertyRef Name="ResimYolu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

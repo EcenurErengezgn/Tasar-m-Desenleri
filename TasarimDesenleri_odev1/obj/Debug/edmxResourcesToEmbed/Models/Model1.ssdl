@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="DosyalamaArsivlemes" EntityType="Model1.Store.DosyalamaArsivlemes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KagitUrunleris" EntityType="Model1.Store.KagitUrunleris" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Mikroskops" EntityType="Model1.Store.Mikroskops" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HesapMakinesis" EntityType="Model1.Store.HesapMakinesis" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OkulCantalaris" EntityType="Model1.Store.OkulCantalaris" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OkulDefterleris" EntityType="Model1.Store.OkulDefterleris" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ResimYolus" EntityType="Model1.Store.ResimYolus" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ResimYoluDosyalamaArsivleme" Association="Model1.Store.ResimYoluDosyalamaArsivleme">
+      <End Role="ResimYolu" EntitySet="ResimYolus" />
+      <End Role="DosyalamaArsivleme" EntitySet="DosyalamaArsivlemes" />
+    </AssociationSet>
+    <AssociationSet Name="ResimYoluHesapMakinesi" Association="Model1.Store.ResimYoluHesapMakinesi">
+      <End Role="ResimYolu" EntitySet="ResimYolus" />
+      <End Role="HesapMakinesi" EntitySet="HesapMakinesis" />
+    </AssociationSet>
+    <AssociationSet Name="ResimYoluKagitUrunleri" Association="Model1.Store.ResimYoluKagitUrunleri">
+      <End Role="ResimYolu" EntitySet="ResimYolus" />
+      <End Role="KagitUrunleri" EntitySet="KagitUrunleris" />
+    </AssociationSet>
+    <AssociationSet Name="ResimYoluMikroskop" Association="Model1.Store.ResimYoluMikroskop">
+      <End Role="ResimYolu" EntitySet="ResimYolus" />
+      <End Role="Mikroskop" EntitySet="Mikroskops" />
+    </AssociationSet>
+    <AssociationSet Name="ResimYoluOkulCantalari" Association="Model1.Store.ResimYoluOkulCantalari">
+      <End Role="ResimYolu" EntitySet="ResimYolus" />
+      <End Role="OkulCantalari" EntitySet="OkulCantalaris" />
+    </AssociationSet>
+    <AssociationSet Name="ResimYoluOkulDefterleri" Association="Model1.Store.ResimYoluOkulDefterleri">
+      <End Role="ResimYolu" EntitySet="ResimYolus" />
+      <End Role="OkulDefterleri" EntitySet="OkulDefterleris" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DosyalamaArsivlemes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fiyat" Type="float" Nullable="false" />
+    <Property Name="urun_bilgisi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ResimYolu_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KagitUrunleris">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fiyat" Type="float" Nullable="false" />
+    <Property Name="urun_bilgisi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ResimYolu_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mikroskops">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fiyat" Type="float" Nullable="false" />
+    <Property Name="urun_bilgisi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ResimYolu_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HesapMakinesis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fiyat" Type="float" Nullable="false" />
+    <Property Name="urun_bilgisi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ResimYolu_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OkulCantalaris">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fiyat" Type="float" Nullable="false" />
+    <Property Name="urun_bilgisi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ResimYolu_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OkulDefterleris">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fiyat" Type="float" Nullable="false" />
+    <Property Name="urun_bilgisi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ResimYolu_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ResimYolus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="ResimYoluDosyalamaArsivleme">
+    <End Role="ResimYolu" Type="Model1.Store.ResimYolus" Multiplicity="1" />
+    <End Role="DosyalamaArsivleme" Type="Model1.Store.DosyalamaArsivlemes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResimYolu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DosyalamaArsivleme">
+        <PropertyRef Name="ResimYolu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ResimYoluHesapMakinesi">
+    <End Role="ResimYolu" Type="Model1.Store.ResimYolus" Multiplicity="1" />
+    <End Role="HesapMakinesi" Type="Model1.Store.HesapMakinesis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResimYolu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HesapMakinesi">
+        <PropertyRef Name="ResimYolu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ResimYoluKagitUrunleri">
+    <End Role="ResimYolu" Type="Model1.Store.ResimYolus" Multiplicity="1" />
+    <End Role="KagitUrunleri" Type="Model1.Store.KagitUrunleris" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResimYolu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="KagitUrunleri">
+        <PropertyRef Name="ResimYolu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ResimYoluMikroskop">
+    <End Role="ResimYolu" Type="Model1.Store.ResimYolus" Multiplicity="1" />
+    <End Role="Mikroskop" Type="Model1.Store.Mikroskops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResimYolu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Mikroskop">
+        <PropertyRef Name="ResimYolu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ResimYoluOkulCantalari">
+    <End Role="ResimYolu" Type="Model1.Store.ResimYolus" Multiplicity="1" />
+    <End Role="OkulCantalari" Type="Model1.Store.OkulCantalaris" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResimYolu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OkulCantalari">
+        <PropertyRef Name="ResimYolu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ResimYoluOkulDefterleri">
+    <End Role="ResimYolu" Type="Model1.Store.ResimYolus" Multiplicity="1" />
+    <End Role="OkulDefterleri" Type="Model1.Store.OkulDefterleris" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResimYolu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OkulDefterleri">
+        <PropertyRef Name="ResimYolu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="20fcd7284c404302985d0264faf39076" Name="Diagram1" >
+        <EntityTypeShape EntityType="Model1.DosyalamaArsivleme" Width="1.5" PointX="10" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.KagitUrunleri" Width="1.5" PointX="1" PointY="2.25" />
+        <EntityTypeShape EntityType="Model1.Mikroskop" Width="1.5" PointX="2.75" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.HesapMakinesi" Width="1.5" PointX="9.875" PointY="4.625" />
+        <EntityTypeShape EntityType="Model1.OkulCantalari" Width="1.5" PointX="2.875" PointY="4.375" />
+        <EntityTypeShape EntityType="Model1.OkulDefterleri" Width="1.5" PointX="11.625" PointY="2.75" />
+        <EntityTypeShape EntityType="Model1.ResimYolu" Width="1.5" PointX="5.875" PointY="2.25" />
+        <AssociationConnector Association="Model1.ResimYoluDosyalamaArsivleme" />
+        <AssociationConnector Association="Model1.ResimYoluHesapMakinesi" />
+        <AssociationConnector Association="Model1.ResimYoluKagitUrunleri" />
+        <AssociationConnector Association="Model1.ResimYoluMikroskop" />
+        <AssociationConnector Association="Model1.ResimYoluOkulCantalari" />
+        <AssociationConnector Association="Model1.ResimYoluOkulDefterleri" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

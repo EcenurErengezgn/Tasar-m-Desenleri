@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="DosyalamaArsivlemes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.DosyalamaArsivleme)">
+        <MappingFragment StoreEntitySet="DosyalamaArsivlemes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+          <ScalarProperty Name="urun_bilgisi" ColumnName="urun_bilgisi" />
+          <ScalarProperty Name="ResimYolu_id" ColumnName="ResimYolu_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KagitUrunleris">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.KagitUrunleri)">
+        <MappingFragment StoreEntitySet="KagitUrunleris">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+          <ScalarProperty Name="urun_bilgisi" ColumnName="urun_bilgisi" />
+          <ScalarProperty Name="ResimYolu_id" ColumnName="ResimYolu_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mikroskops">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Mikroskop)">
+        <MappingFragment StoreEntitySet="Mikroskops">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+          <ScalarProperty Name="urun_bilgisi" ColumnName="urun_bilgisi" />
+          <ScalarProperty Name="ResimYolu_id" ColumnName="ResimYolu_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HesapMakinesis">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.HesapMakinesi)">
+        <MappingFragment StoreEntitySet="HesapMakinesis">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+          <ScalarProperty Name="urun_bilgisi" ColumnName="urun_bilgisi" />
+          <ScalarProperty Name="ResimYolu_id" ColumnName="ResimYolu_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OkulCantalaris">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.OkulCantalari)">
+        <MappingFragment StoreEntitySet="OkulCantalaris">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+          <ScalarProperty Name="urun_bilgisi" ColumnName="urun_bilgisi" />
+          <ScalarProperty Name="ResimYolu_id" ColumnName="ResimYolu_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OkulDefterleris">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.OkulDefterleri)">
+        <MappingFragment StoreEntitySet="OkulDefterleris">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+          <ScalarProperty Name="urun_bilgisi" ColumnName="urun_bilgisi" />
+          <ScalarProperty Name="ResimYolu_id" ColumnName="ResimYolu_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResimYolus">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.ResimYolu)">
+        <MappingFragment StoreEntitySet="ResimYolus">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

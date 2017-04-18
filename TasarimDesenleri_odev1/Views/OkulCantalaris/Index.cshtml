@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TasarimDesenleri_odev1.Models.OkulCantalari>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    #urunler {
+        width: 1920px;
+        background-color: #ccc;
+        padding: 30px;
+    }
+</style>
+
+
+
+
+
+<h3>
+    @Html.ActionLink("Okul Çantaları Kategorisine Ürün Eklemek İçin Tıklayınız!", "Create")
+</h3>
+<div id="urunler">
+
+    @foreach (var item in Model)
+    {
+
+        <img src="~/Resim/@Html.DisplayFor(modelItem => item.ResimYolu.adi)" width="150" height="150" /><br /><br />
+
+        <td>
+            <font size="2" face="Helvetica" color="blue">Ürün Adı : </font>
+            <font size="2" face="Helvetica" color="black">@Html.DisplayFor(modelItem => item.adi)</font><br />
+            <font size="2" face="Helvetica" color="blue">Fiyat : </font>
+            <font size="2" face="Helvetica" color="black">@Html.DisplayFor(modelItem => item.fiyat).90TL</font><br />
+        </td>
+        <td>
+            @Html.ActionLink("Güncelleme", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Ürün Detayı", "Details", new { id = item.id }) |
+            @Html.ActionLink("Sil", "Delete", new { id = item.id })<br /><br />
+        </td>
+
+
+
+
+    }
+</div>
+
+
+
+
